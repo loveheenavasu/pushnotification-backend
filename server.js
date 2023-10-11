@@ -33,7 +33,7 @@ app.post("/send-notification", async (req, res) => {
     };
     console.log(req.body, "req.body");
     // Send a push notification using the axios library or Firebase Admin SDK
-    getmessage.getMessaging().sendMulticast(message)
+    getmessage.getMessaging().sendEachForMulticast(message)
     .then((response) => {
       console.log(response + ' messages were sent successfully');
     });
