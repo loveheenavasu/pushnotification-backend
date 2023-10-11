@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.post("/send-notification", async (req, res) => {
   try {
     // Get registration tokens and notification data from the request
-    const { notificationData } = req.body;
+    const { registrationTokens, notificationData } = req.body;
 
     const message = {
       data: notification, // Notification data (e.g., title, body)
@@ -33,7 +33,7 @@ app.post("/send-notification", async (req, res) => {
     };
     console.log(req.body, "req.body");
     // Send a push notification using the axios library or Firebase Admin SDK
-    getmessage.getMessaging().sendMulticast(notificationData)
+    getmessage.getMessaging().subscribeToTopic(registrationTokens,notificationData)
     .then((response) => {
       console.log(response + ' messages were sent successfully');
     });
