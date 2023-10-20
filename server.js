@@ -2,7 +2,8 @@ const express = require("express");
 const axios = require("axios");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 3000; // Set your desired port
+// const port = 3000; // Set your desired port
+const port = 'https://myapp-dvnke5rii-loveheenavasu.vercel.app'
 const cors = require("cors"); // Import the cors middleware
 
 const admin = require("firebase-admin");
